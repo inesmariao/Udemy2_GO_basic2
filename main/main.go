@@ -3,25 +3,23 @@ package main
 import "fmt"
 
 func main() {
-	// Flow control
-	num := 45
 
-	// Conditional IF - ELSE-IF - ELSE
-	if num < 40 {
-		fmt.Println("I execute the code inside the IF")
-	} else if num != 45 {
-		fmt.Println("I execute the code inside the ELSE IF")
-	} else {
-		fmt.Println("I execute the code inside the ELSE")
+	// Flow control FOR
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
 	}
 
-	age := 30
+	name := "Ines"
 
-	if age >= 18 {
-		fmt.Println("You are of legal age")
-	} else if age < 18 && age >= 0 {
-		fmt.Println("You are a minor")
-	} else {
-		fmt.Println("Age is invalid")
+	for i := 0; i < 4; i++ {
+		fmt.Println(i, string(name[i]))
+	}
+
+	// For loop used like the While loop, in Go there is no While loop
+	num := 1
+	for num != 0 {
+		fmt.Println("num different from 0")
+		fmt.Print("Enter another number: ")
+		fmt.Scanln(&num)
 	}
 }
