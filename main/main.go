@@ -1,40 +1,27 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
+	// Flow control
+	num := 45
 
-	//Mathematical operators
-	addition := 10 + 5
-	subtraction := 10 - 5
-	multiplication := 10 * 5
-	division := 10 / 5
-	module := 10 % 5
-	fmt.Println(addition, subtraction, multiplication, division, module)
+	// Conditional IF - ELSE-IF - ELSE
+	if num < 40 {
+		fmt.Println("I execute the code inside the IF")
+	} else if num != 45 {
+		fmt.Println("I execute the code inside the ELSE IF")
+	} else {
+		fmt.Println("I execute the code inside the ELSE")
+	}
 
-	// Increment operators
-	addition++
-	fmt.Println(addition)
-	addition--
-	fmt.Println(addition)
+	age := 30
 
-	// Assignment operator with addition
-	addition += 10
-	fmt.Println(addition)
-
-	// Comparison operators
-	fmt.Println(10 > 5)   // true
-	fmt.Println(10 < 5)   // false
-	fmt.Println(10 >= 5)  // true
-	fmt.Println(10 <= 5)  // false
-	fmt.Println(10 == 5)  // false
-	fmt.Println(10 != 5)  // true
-	fmt.Println(10 != 10) // false
-
-	// Logical operators
-	fmt.Println(10 < 5 && 10 > 4) // false
-	fmt.Println(10 > 5 && 10 > 4) // true
-	fmt.Println(10 < 5 || 10 > 4) // true
+	if age >= 18 {
+		fmt.Println("You are of legal age")
+	} else if age < 18 && age >= 0 {
+		fmt.Println("You are a minor")
+	} else {
+		fmt.Println("Age is invalid")
+	}
 }
