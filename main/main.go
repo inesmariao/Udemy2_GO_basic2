@@ -3,22 +3,16 @@ package main
 import "fmt"
 
 func main() {
-	myFunction()
-	greeting("Inés")
-	fmt.Println("The addition is: ", addition(5, 7))
-}
+	/*
+		Programa que recorra los números del 0 al 20 y a través de un mensaje por consola muestre el número y muestre solo los que son pares.
 
-// Function that does not receive a value
-func myFunction() {
-	fmt.Println("I write from my function")
-}
+		Program that goes through the numbers from 0 to 20 and through a console message displays the number and shows only those that are even.
+	*/
 
-// Function that receives a value
-func greeting(name string) {
-	fmt.Println("Hello.... " + name)
-}
-
-// Function that returns a value
-func addition(num1, num2 int) int {
-	return num1 + num2
+	fmt.Println("Números pares del 0 al 20: ")
+	for i := 0; i <= 20; i++ {
+		if i%2 == 0 {
+			fmt.Printf("%d es un número par.\n", i)
+		}
+	}
 }
