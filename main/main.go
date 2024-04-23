@@ -3,23 +3,22 @@ package main
 import "fmt"
 
 func main() {
+	myFunction()
+	greeting("Inés")
+	fmt.Println("The addition is: ", addition(5, 7))
+}
 
-	// Flow control FOR
-	for i := 0; i < 10; i++ {
-		fmt.Println(i)
-	}
+// Function that does not receive a value
+func myFunction() {
+	fmt.Println("I write from my function")
+}
 
-	name := "Ines"
+// Function that receives a value
+func greeting(name string) {
+	fmt.Println("Hello.... " + name)
+}
 
-	for i := 0; i < 4; i++ {
-		fmt.Println(i, string(name[i]))
-	}
-
-	// For loop used like the While loop, in Go there is no While loop
-	num := 1
-	for num != 0 {
-		fmt.Println("num different from 0")
-		fmt.Print("Enter another number: ")
-		fmt.Scanln(&num)
-	}
+// Function that returns a value
+func addition(num1, num2 int) int {
+	return num1 + num2
 }
