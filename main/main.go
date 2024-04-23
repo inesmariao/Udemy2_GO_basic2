@@ -1,38 +1,47 @@
 package main
 
-import "fmt"
-
-// POO struct
-type person struct {
-	name     string
-	lastName string
-	age      int
-}
-
-// Person structure methods
-func (p person) greeting(msg string) {
-	fmt.Println(msg + ", " + p.name)
-}
-
-func (p person) birthday() int {
-	return p.age + 1
-}
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-	person1 := person{"Graciela", "Hernandez", 47}
-	person2 := person{"Pedro", "Oliveros", 46}
-	person3 := person{"Lina", "Oliveros", 40}
 
-	fmt.Println("Person1: ", person1)
-	fmt.Println("Person2: ", person2)
-	fmt.Println("Person3: ", person3)
+	fruits := []string{"Mango", "Strawberry", "Pear", "Apple", "Kiwi"}
 
-	person2.name = "Catalina"
-	fmt.Println("Person1: ", person1)
+	fmt.Println(fruits[1])
 
-	person1.greeting("!Hello!")
-	person2.greeting("!Hello!")
-	person3.greeting("!Hello!")
+	fruits = append(fruits, "Watermelon", "Melon")
 
-	fmt.Printf("%s cumplió años ayer, hoy tiene %d años", person1.name, person1.birthday())
+	printArray(fruits)
+
+	fruits = append(fruits, "Pineapple")
+
+	printArray(fruits)
+
+	searchElement(fruits, "melon")
+
+}
+
+func printArray(arr []string) {
+	for i := 0; i < len(arr); i++ {
+		fmt.Println(arr[i])
+	}
+	fmt.Println()
+}
+
+func searchElement(arr []string, f string) {
+	f = strings.Title(f)
+	found := false
+	for i := 0; i < len(arr); i++ {
+		if arr[i] == f {
+			found = true
+			break
+		}
+	}
+	if found {
+		fmt.Printf("%s is in the list\n", f)
+	} else {
+		fmt.Printf("%s is not in the list\n", f)
+	}
 }
