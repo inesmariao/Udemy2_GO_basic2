@@ -2,17 +2,37 @@ package main
 
 import "fmt"
 
+// POO struct
+type person struct {
+	name     string
+	lastName string
+	age      int
+}
+
+// Person structure methods
+func (p person) greeting(msg string) {
+	fmt.Println(msg + ", " + p.name)
+}
+
+func (p person) birthday() int {
+	return p.age + 1
+}
+
 func main() {
-	/*
-		Programa que recorra los números del 0 al 20 y a través de un mensaje por consola muestre el número y muestre solo los que son pares.
+	person1 := person{"Graciela", "Hernandez", 47}
+	person2 := person{"Pedro", "Oliveros", 46}
+	person3 := person{"Lina", "Oliveros", 40}
 
-		Program that goes through the numbers from 0 to 20 and through a console message displays the number and shows only those that are even.
-	*/
+	fmt.Println("Person1: ", person1)
+	fmt.Println("Person2: ", person2)
+	fmt.Println("Person3: ", person3)
 
-	fmt.Println("Números pares del 0 al 20: ")
-	for i := 0; i <= 20; i++ {
-		if i%2 == 0 {
-			fmt.Printf("%d es un número par.\n", i)
-		}
-	}
+	person2.name = "Catalina"
+	fmt.Println("Person1: ", person1)
+
+	person1.greeting("!Hello!")
+	person2.greeting("!Hello!")
+	person3.greeting("!Hello!")
+
+	fmt.Printf("%s cumplió años ayer, hoy tiene %d años", person1.name, person1.birthday())
 }
